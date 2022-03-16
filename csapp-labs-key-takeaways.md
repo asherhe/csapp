@@ -1,4 +1,4 @@
-# Key Takeaways of CSAPP Labs
+# CSAPP Labs - Key Takeaways
 
 CSAPP labs are a very interesting (and important) part of the CS:APP course. Here are a few key takeaways I've learned
 
