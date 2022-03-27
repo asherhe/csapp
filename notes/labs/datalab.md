@@ -1,139 +1,10 @@
-/*
- * CS:APP Data Lab
- *
- * <Please put your name and userid here>
- *
- * bits.c - Source file with your solutions to the Lab.
- *          This is the file you will hand in to your instructor.
- *
- * WARNING: Do not include the <stdio.h> header; it confuses the dlc
- * compiler. You can still use printf for debugging without including
- * <stdio.h>, although you might get a compiler warning. In general,
- * it's not good practice to ignore compiler warnings, but in this
- * case it's OK.
- */
+# Implementation Notes for Datalab
 
-#if 0
-/*
- * Instructions to Students:
- *
- * STEP 1: Read the following instructions carefully.
- */
+## `bitXor`
 
-You will provide your solution to the Data Lab by
-editing the collection of functions in this source file.
+`x^y` can alternatively be expressed as `(~x & y) | (x & ~y)`. However, `|` (logical OR) is not allowed here, so we apply De Morgan's Laws to substitute `x|y` with `~(~x & ~y)`
 
-INTEGER CODING RULES:
- 
-  Replace the "return" statement in each function with one
-  or more lines of C code that implements the function. Your code 
-  must conform to the following style:
- 
-  int Funct(arg1, arg2, ...) {
-      /* brief description of how your implementation works */
-      int var1 = Expr1;
-      ...
-      int varM = ExprM;
-
-      varJ = ExprJ;
-      ...
-      varN = ExprN;
-      return ExprR;
-  }
-
-  Each "Expr" is an expression using ONLY the following:
-  1. Integer constants 0 through 255 (0xFF), inclusive. You are
-      not allowed to use big constants such as 0xffffffff.
-  2. Function arguments and local variables (no global variables).
-  3. Unary integer operations ! ~
-  4. Binary integer operations & ^ | + << >>
-    
-  Some of the problems restrict the set of allowed operators even further.
-  Each "Expr" may consist of multiple operators. You are not restricted to
-  one operator per line.
-
-  You are expressly forbidden to:
-  1. Use any control constructs such as if, do, while, for, switch, etc.
-  2. Define or use any macros.
-  3. Define any additional functions in this file.
-  4. Call any functions.
-  5. Use any other operations, such as &&, ||, -, or ?:
-  6. Use any form of casting.
-  7. Use any data type other than int.  This implies that you
-     cannot use arrays, structs, or unions.
-
- 
-  You may assume that your machine:
-  1. Uses 2s complement, 32-bit representations of integers.
-  2. Performs right shifts arithmetically.
-  3. Has unpredictable behavior when shifting if the shift amount
-     is less than 0 or greater than 31.
-
-
-EXAMPLES OF ACCEPTABLE CODING STYLE:
-  /*
-   * pow2plus1 - returns 2^x + 1, where 0 <= x <= 31
-   */
-  int pow2plus1(int x) {
-     /* exploit ability of shifts to compute powers of 2 */
-     return (1 << x) + 1;
-  }
-
-  /*
-   * pow2plus4 - returns 2^x + 4, where 0 <= x <= 31
-   */
-  int pow2plus4(int x) {
-     /* exploit ability of shifts to compute powers of 2 */
-     int result = (1 << x);
-     result += 4;
-     return result;
-  }
-
-FLOATING POINT CODING RULES
-
-For the problems that require you to implement floating-point operations,
-the coding rules are less strict.  You are allowed to use looping and
-conditional control.  You are allowed to use both ints and unsigneds.
-You can use arbitrary integer and unsigned constants. You can use any arithmetic,
-logical, or comparison operations on int or unsigned data.
-
-You are expressly forbidden to:
-  1. Define or use any macros.
-  2. Define any additional functions in this file.
-  3. Call any functions.
-  4. Use any form of casting.
-  5. Use any data type other than int or unsigned.  This means that you
-     cannot use arrays, structs, or unions.
-  6. Use any floating point data types, operations, or constants.
-
-
-NOTES:
-  1. Use the dlc (data lab checker) compiler (described in the handout) to 
-     check the legality of your solutions.
-  2. Each function has a maximum number of operations (integer, logical,
-     or comparison) that you are allowed to use for your implementation
-     of the function.  The max operator count is checked by dlc.
-     Note that assignment ('=') is not counted; you may use as many of
-     these as you want without penalty.
-  3. Use the btest test harness to check your functions for correctness.
-  4. Use the BDD checker to formally verify your functions
-  5. The maximum number of ops for each function is given in the
-     header comment for each function. If there are any inconsistencies 
-     between the maximum ops in the writeup and in this file, consider
-     this file the authoritative source.
-
-/*
- * STEP 2: Modify the following functions according the coding rules.
- * 
- *   IMPORTANT. TO AVOID GRADING SURPRISES:
- *   1. Use the dlc compiler to check that your solutions conform
- *      to the coding rules.
- *   2. Use the BDD checker to formally verify that your solutions produce 
- *      the correct answers.
- */
-
-#endif
-// 1
+```c
 /*
  * bitXor - x^y using only ~ and &
  *   Example: bitXor(4, 5) = 1
@@ -147,6 +18,15 @@ int bitXor(int x, int y)
   // The | operator is forbidden so we substitute it for &s and ~s using De Morgan's Laws
   return ~(~(~x & y) & ~(x & ~y));
 }
+```
+
+**Operators:** 8
+
+## `tMin`
+
+The smallest two's complement integer is always `1000...0000`. To construct this in the case of 32 bits, we left shift 1 by 31 bits.
+
+```c
 /*
  * tmin - return minimum two's complement integer
  *   Legal ops: ! ~ & ^ | + << >>
@@ -158,7 +38,39 @@ int tmin(void)
   // tmin is just a 1 followed by zeros
   return 1 << 31;
 }
-// 2
+```
+
+**Operators:** 1
+
+## `isTmax`
+
+`tMax` has a special property that adding one has the same effect as bitwise negation. `-1` is the only other two's complement number that shares this property. To test if `x == tMax`, we check if `~x == x + 1` while also maintaining that `x != -1`.
+
+Unfortunately, `==` and `!=` are prohibited. What is not prohibited though, is `!`, the logical negation operator. `!x` is `true` (`-1`) if `x` is zero and `false` (`0`) otherwise. We can exploit this fact to construct `==`:
+
+```c
+a == b  =>  !(a-b)
+```
+
+However, the subtraction operator `-` is also prohibited. Rather than implementing subtraction (`a-b  =>  a + ~b + 1`, three operations), we can use `a^b` in place of `a-b`. All we are doing with the subtraction operator anyway is checking that two values have the same value. It is apparent that `^` has the same effect if we look at its truth table:
+
+```
+ ^ | 0 | 1
+ 0 | 0 | 1 
+ 1 | 1 | 0
+```
+
+So substituting `-` for `^`, we can make the following simplifications:
+
+```c
+   ~x == x + 1 && x != -1
+=> ~x ^ (x + 1) == 0 && ~!(x + 1)
+=> !(~x ^ (x + 1)) & ~!(x + 1)
+```
+
+If we extract `x + 1` into a variable to save operations, we get the following code:
+
+```c
 /*
  * isTmax - returns 1 if x is the maximum, two's complement number,
  *     and 0 otherwise
@@ -173,6 +85,13 @@ int isTmax(int x)
   int add1 = x + 1;
   return !(~x ^ add1) & ~!add1;
 }
+```
+
+**Operators:** 7
+
+## `allOddBits`
+
+```c
 /*
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
  *   where bits are numbered from 0 (least significant) to 31 (most significant)
@@ -195,6 +114,13 @@ int allOddBits(int x)
    * =>  !((x & mask) ^ mask)
    */
 }
+```
+
+**Operators:** 7
+
+## `negate`
+
+```c
 /*
  * negate - return -x
  *   Example: negate(1) = -1.
@@ -206,7 +132,13 @@ int negate(int x)
 {
   return ~x + 1;
 }
-// 3
+```
+
+**Operators:** 2
+
+## `isAsciiDigit`
+
+```c
 /*
  * isAsciiDigit - return 1 if 0x30 <= x <= 0x39 (ASCII codes for characters '0' to '9')
  *   Example: isAsciiDigit(0x35) = 1.
@@ -236,6 +168,13 @@ int isAsciiDigit(int x)
   int eightOr9 = !(((x + ~0x35) >> 1) + ~0); // Same logic as zero2Seven
   return zero2Seven | eightOr9;
 }
+```
+
+**Operators:** 13
+
+## `conditional`
+
+```c
 /*
  * conditional - same as x ? y : z
  *   Example: conditional(2,4,5) = 4
@@ -252,6 +191,13 @@ int conditional(int x, int y, int z)
 
   return (y & xMask) | (z & ~xMask);
 }
+```
+
+**Operators:** 7
+
+## `isLessOrEqual`
+
+```c
 /*
  * isLessOrEqual - if x <= y  then return 1, else return 0
  *   Example: isLessOrEqual(4,5) = 1.
@@ -283,7 +229,13 @@ int isLessOrEqual(int x, int y)
    *                 !((y - x) >> 31))
    */
 }
-// 4
+```
+
+**Operators:** 14
+
+## `logicalNeg`
+
+```c
 /*
  * logicalNeg - implement the ! operator, using all of
  *              the legal operators except !
@@ -306,6 +258,13 @@ int logicalNeg(int x)
    * =>  ((x >> 31) + 1) & (((~x + 1) >> 31) + 1)
    */
 }
+```
+
+**Operators:** 7
+
+## `howManyBits`
+
+```c
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement
  *  Examples: howManyBits(12) = 5
@@ -368,7 +327,13 @@ int howManyBits(int x)
 
   return lo + 1; // Since bits start at 0
 }
-// float
+```
+
+**Operators:** 73
+
+## `floatScale2`
+
+```c
 /*
  * floatScale2 - Return bit-level equivalent of expression 2*f for
  *   floating point argument f.
@@ -404,6 +369,13 @@ unsigned floatScale2(unsigned uf)
   uf &= ~expMask; // clear the exponent
   return uf | exp; // add the exponent
 }
+```
+
+**Operators:** 14
+
+## `floatFloat2Int`
+
+```c
 /*
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
  *   for floating point argument f.
@@ -420,6 +392,13 @@ int floatFloat2Int(unsigned uf)
 {
   return 2;
 }
+`
+
+**Operators:** 
+
+## `floatPower2`
+
+```c
 /*
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
  *   (2.0 raised to the power x) for any 32-bit integer x.
@@ -437,3 +416,6 @@ unsigned floatPower2(int x)
 {
   return 2;
 }
+```
+
+**Operators:** 
