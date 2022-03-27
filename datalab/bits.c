@@ -193,8 +193,7 @@ int allOddBits(int x)
   // Build mask (0xAAAAAAAA) first - rather than shifting 4 times, we only need
   // 2 shifts and 2 ORs
   int mask = (0xAA << 8) | 0xAA;
-  // We can only express byte values, but no need to write the definition of
-  // mask again
+  // We can only express byte values, but no need to write the definition of mask again
   mask = (mask << 16) | mask;
   return !((x & mask) ^ mask);
   /*
@@ -391,19 +390,26 @@ int howManyBits(int x)
 unsigned floatScale2(unsigned uf)
 {
   // Get exponent part of the number
-  unsigned mask = 0x7f800000; // binary: 0 11111111 00000000000000000000000 - selects the exp portion of the float
-  unsigned exp = uf & mask;
+  unsigned expMask = 0x7f800000; // binary: 0 11111111 00000000000000000000000 - selects the exp portion of the float
+  unsigned fracMask = 0x7fffff; // binary: 0 00000000 11111111111111111111111 - selects the frac portion of the float
+  unsigned exp = uf & expMask;
   if (uf << 1 == 0) // Positive or negative zero
     return uf;
-  if (exp == mask) // "Special" value - infinities and NaN
+  if (exp == expMask) // "Special" value - infinities and NaN
     return uf;     // No need to do anything; double a special value is still itself
-  if (exp == 0)    // Denormalized values
-    return uf;
+  if (exp == 0) {  // Denormalized values
+    unsigned frac = uf & fracMask; // the fraction portion of the floating-point number
+    frac <<= 1;
+    // if the value overflows the exponent should in theory be one anyways
+    // frac &= fracMask;
+    uf &= ~fracMask;
+    return uf | frac;
+  }
+
+  // Normalized Values
   exp += 0x00800000; // Add one to the exponent
-
-  uf = uf & ~mask;
-
-  return uf | exp;
+  uf &= ~expMask; // clear the exponent
+  return uf | exp; // add the exponent
 }
 /*
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
