@@ -183,9 +183,9 @@ int isTmax(int x)
  */
 int allOddBits(int x)
 {
-  // Build mask (0xAAAAAAAA) first - rather than shifting 4 times, we only need
+  // Build mask (0xaaaaaaaa) first - rather than shifting 4 times, we only need
   // 2 shifts and 2 ORs
-  int mask = (0xAA << 8) | 0xAA;
+  int mask = (0xaa << 8) | 0xaa;
   // We can only express byte values, but no need to write the definition of mask again
   mask = (mask << 16) | mask;
   return !((x & mask) ^ mask);
