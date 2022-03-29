@@ -384,13 +384,14 @@ unsigned floatScale2(unsigned uf)
 {
   // Get exponent part of the number
   unsigned expMask = 0x7f800000; // binary: 0 11111111 00000000000000000000000 - selects the exp portion of the float
-  unsigned fracMask = 0x7fffff; // binary: 0 00000000 11111111111111111111111 - selects the frac portion of the float
+  unsigned fracMask = 0x7fffff;  // binary: 0 00000000 11111111111111111111111 - selects the frac portion of the float
   unsigned exp = uf & expMask;
   if (uf << 1 == 0) // Positive or negative zero
     return uf;
   if (exp == expMask) // "Special" value - infinities and NaN
-    return uf;     // No need to do anything; double a special value is still itself
-  if (exp == 0) {  // Denormalized values
+    return uf;        // No need to do anything; double a special value is still itself
+  if (exp == 0)
+  {                                // Denormalized values
     unsigned frac = uf & fracMask; // the fraction portion of the floating-point number
     frac <<= 1;
     // if the value overflows the exponent should in theory be one anyways
@@ -401,8 +402,8 @@ unsigned floatScale2(unsigned uf)
 
   // Normalized Values
   exp += 0x00800000; // Add one to the exponent
-  uf &= ~expMask; // clear the exponent
-  return uf | exp; // add the exponent
+  uf &= ~expMask;    // clear the exponent
+  return uf | exp;   // add the exponent
 }
 /*
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
