@@ -419,7 +419,24 @@ unsigned floatScale2(unsigned uf)
  */
 int floatFloat2Int(unsigned uf)
 {
-  return 2;
+  // Get the three components of a lfloating-point number
+  unsigned signMask = 0x80000000;
+  unsigned expMask = 0x7f800000;
+  unsigned fracMask = 0x007fffff;
+  int sign = uf & signMask;
+  int exp = ((uf & expMask) >> 23) - 0x7f; // account for bias
+  // printf("0x%08x\t%d\n", uf, exp);
+  int frac = (uf & fracMask) + 0x00800000; // also include the implied 1
+
+  if (exp < 0)
+    return 0; // less than zero
+  if (exp > 23)
+    return 0x80000000; // doesn't fit in an int
+
+  frac >>= 23 - exp;
+  if (sign == signMask)
+    frac = -frac;
+  return frac;
 }
 /*
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
@@ -436,5 +453,9 @@ int floatFloat2Int(unsigned uf)
  */
 unsigned floatPower2(int x)
 {
-  return 2;
+  if (x < -126) // too small to be expressed with floating-point
+    return 0;
+  if (x > 127) // too large for floating-point
+    return 0x7f800000;
+  return (0x7f + x) << 23;
 }
