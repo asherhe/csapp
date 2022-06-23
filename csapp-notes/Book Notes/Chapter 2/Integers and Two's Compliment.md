@@ -62,4 +62,19 @@ So the minimum value is $[100\cdots0]$ (set the negative bit on), which is equal
 
 ## Signed ↔ Unsigned conversions
 
+Due to the completely different nature of signed and unsigned numbers, defining a way to convert between signed and unsigned numbers is a bit hard. The ranges of signed and unsigned numbers do not coincide, and behaviour for unrepresentable numbers is not clear. Should negative numbers be rounded as zero? Should too-large numbers just straight up be written as $TMax$?.
+
+How C does it is a little weird. Instead of doing any conversions, it just points to the number and says, "this is `unsigned` now". So for example, when we ask C to make `-12345` unsigned, it just treats the value `0xCFC7` as unsigned. This would just be `53191`, which is a bit strange considering that it was just negative mere seconds ago.
+
+Basically we can define $T2U\left(x\right)\doteq B2U\left(T2B\left(x\right)\right)$ and vice versa.
+
+Alternatively, since the conversion is equivalent to moving the negative numbers over to the too-large numbers, we can define it as:
+
+$$
+T2U_w(x)=\begin{cases}
+x+2^w,&x<0\\
+x,&x\ge0
+\end{cases}
+$$
+
 
