@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Labs/Datalab/Datalab.md",
+            "file": "Labs/Datalab/allOddBits.md",
             "mode": "source",
             "source": true
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Labs/Datalab/Datalab.md",
+                "file": "Labs/Datalab/allOddBits.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Labs/Datalab/Datalab.md"
+                "file": "Labs/Datalab/allOddBits.md"
               }
             }
           },
@@ -127,15 +127,15 @@
   },
   "active": "bbed9b7541b1da7f",
   "lastOpenFiles": [
-    "Labs/Datalab/Datalab.md",
+    "Labs/Datalab/allOddBits.md",
     "Labs/Datalab/bitXor.md",
+    "Labs/Datalab/Datalab.md",
     "Labs/Datalab/tMin.md",
+    "Labs/Datalab/isTmax.md",
     "Book Notes/Chapter 2/Integers and Two's Compliment.md",
     "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.9.md",
+    "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.7.md",
     "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.6.md",
-    "Book Notes/Chapter 2/Size of C Data Types.md",
-    "Book Notes/Chapter 2/Floating Point.md",
-    "Book Notes/Chapter 2/Boolean Algebra.md",
-    "Book Notes/Chapter 2/B.md"
+    "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.5.md"
   ]
 }

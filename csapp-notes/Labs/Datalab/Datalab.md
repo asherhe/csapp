@@ -3,7 +3,7 @@ Aliases: [ "#datalab" ]
 ---
 
 # Datalab
-#lab 
+#lab #datalab #chapter-2 
 
 The first of the many labs in the CS:APP course, Datalab will test your ingenuity and problem-solving skills in a set of 13 problems of increasing difficulty. In this lab, you will learn how to skillfully and elegantly manipulate integer and floating-point numeric data types
 
