@@ -1,0 +1,141 @@
+{
+  "main": {
+    "id": "2a0f29220276db72",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbed9b7541b1da7f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Labs/Datalab/Datalab.md",
+            "mode": "source",
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0d845f91b91b5a21",
+    "type": "split",
+    "children": [
+      {
+        "id": "376f58e4248d9814",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0641378525e23e27",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "8c855600f2509e8a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#boolean-algebra",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "374612c6ec2aec85",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "19c6b05dae104461",
+    "type": "split",
+    "children": [
+      {
+        "id": "13f44291cf6b8d4d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d859092b1e6004e0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Labs/Datalab/Datalab.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "763ce0e1bd6b01d2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ceb81ac84e63b094",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Labs/Datalab/Datalab.md"
+              }
+            }
+          },
+          {
+            "id": "e3b72a719bc73402",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "bbed9b7541b1da7f",
+  "lastOpenFiles": [
+    "Labs/Datalab/Datalab.md",
+    "Labs/Datalab/bitXor.md",
+    "Labs/Datalab/tMin.md",
+    "Book Notes/Chapter 2/Integers and Two's Compliment.md",
+    "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.9.md",
+    "Book Notes/Selected Practice Problems/Chapter 2/Practice Problem 2.6.md",
+    "Book Notes/Chapter 2/Size of C Data Types.md",
+    "Book Notes/Chapter 2/Floating Point.md",
+    "Book Notes/Chapter 2/Boolean Algebra.md",
+    "Book Notes/Chapter 2/B.md"
+  ]
+}
