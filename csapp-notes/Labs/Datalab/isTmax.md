@@ -1,5 +1,11 @@
+---
+date created: 2022/05/02 7:57:22 pm
+date modified: 2022/06/25 8:36:53 pm
+---
+
 # isTmax
-#lab #datalab #2s-compliment 
+
+#lab #datalab #2s-compliment
 
 tMax, the largest 32-bit [[Integers and Two's Compliment|two's compliment number]], is `0x7fffffff`. It is one of the only two numbers along with `-1` that has the property such that adding 1 has the same effect as a bitwise negation (note: this does not work for logical or arithmetic negation). Therefore all we do is to test if `x + 1 == ~x`.
 
@@ -21,3 +27,5 @@ int isTmax(int x)
   return !(~x ^ add1) & ~!add1;
 }
 ```
+
+**Operations:** #todo

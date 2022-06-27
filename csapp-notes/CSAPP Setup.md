@@ -1,3 +1,7 @@
+---
+date created: 2022/06/22 10:00:30 pm
+date modified: 2022/06/23 5:45:52 pm
+---
 # Setting up the CSAPP environment
 
 ## Step 1: Install Debian 11 on PVE

@@ -189,11 +189,6 @@ int allOddBits(int x)
   // We can only express byte values, but no need to write the definition of mask again
   mask = (mask << 16) | mask;
   return !((x & mask) ^ mask);
-  /*
-   *     x & mask == mask
-   * =>  (x & mask) ^ mask == 0
-   * =>  !((x & mask) ^ mask)
-   */
 }
 /*
  * negate - return -x
@@ -225,13 +220,7 @@ int isAsciiDigit(int x)
 
   // We try to fit our numbers 0-7 (0x30-0x37) into the numbers 8-15, then >> 3
   int zero2Seven = !(((x + ~0x27 /* Writing "- 0x28" without subtraction*/) >> 3) + ~0 /* ~0 is -1 */);
-  /*
-   *     8 <= x - 0x30 + 8 <= 15
-   * =>  (x - 0x28) >> 3 == 1
-   * =>  (x - 0x28) >> 3 - 1 == 0
-   * =>  !((x + ~0x27) >> 3 - 1)
-   */
-
+  
   // Now try to fit it into 2 and 3 and >> 1
   int eightOr9 = !(((x + ~0x35) >> 1) + ~0); // Same logic as zero2Seven
   return zero2Seven | eightOr9;
@@ -245,10 +234,10 @@ int isAsciiDigit(int x)
  */
 int conditional(int x, int y, int z)
 {
-  // Same functionality as the multiplexer, so we can use the multiplexer
+  // Same functionality as the multiplexer, so we can use the multiplexer logic
 
   // Converts x to a true/false value for masking
-  int xMask = !x + ~0;
+  int xMask = !x - 1;
 
   return (y & xMask) | (z & ~xMask);
 }
@@ -270,18 +259,6 @@ int isLessOrEqual(int x, int y)
   // Check if the signs are different - logic fails if they are
   int diffSigns = (xSign ^ (y >> 31));
   return (diffSigns & !~xSign) | (~diffSigns & !((y + ~x + 1) >> 31));
-  /*
-   *     if (diffSigns) x < 0 else y - x > 0
-   * =>  conditional(diffSigns,
-   *                 (x >> 31) == -1,
-   *                 (y - x) >> 31 == 0)
-   * =>  conditional(diffSigns,
-   *                 ~(x >> 31) == 0,
-   *                 !((y - x) >> 31))
-   * =>  conditional(diffSigns,
-   *                 !~(x >> 31),
-   *                 !((y - x) >> 31))
-   */
 }
 // 4
 /*
@@ -299,12 +276,6 @@ int logicalNeg(int x)
   // checking if -x is not negative)
 
   return ((x >> 31) + 1) & (((~x + 1) >> 31) + 1);
-  /*
-   *     x >= 0 && x <= 0
-   * =>  MSB(x) == 1 && MSB(-x) == 1
-   * =>  x >> 31 == -1 && -x >> 31 == -1
-   * =>  ((x >> 31) + 1) & (((~x + 1) >> 31) + 1)
-   */
 }
 /* howManyBits - return the minimum number of bits required to represent x in
  *             two's complement

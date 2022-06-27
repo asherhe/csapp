@@ -5,5 +5,7 @@
   "obsidian-outliner",
   "obsidian-footnotes",
   "better-fn",
-  "obsidian-prominent-starred-files"
+  "obsidian-prominent-starred-files",
+  "obsidian-linter",
+  "waypoint"
 ]

@@ -1,4 +1,10 @@
+---
+date created: 2022/05/02 7:33:35 pm
+date modified: 2022/06/25 8:36:33 pm
+---
+
 # bitXor
+
 #lab #datalab #logic
 
 `x^y` is logically equivalent to `(~x & y) | (x & ~y)`. [[Boolean Algebra#Or|Bitwise OR]] isn't allowed here so we apply De Morgan's laws to convert it into [[Boolean Algebra#And|bitwise ANDs]] and [[Boolean Algebra#Not|NOTs]].

@@ -1,37 +1,22 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": true,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "tag:#practice-problems",
-      "color": {
-        "a": 1,
-        "rgb": 10406223
-      }
-    },
-    {
-      "query": "path:Labs",
-      "color": {
-        "a": 1,
-        "rgb": 14725458
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.15150214592275,
-  "lineSizeMultiplier": 2.09785407725322,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.63519313304721,
-  "repelStrength": 10.5579399141631,
-  "linkStrength": 0.746781115879828,
-  "linkDistance": 185,
-  "scale": 1.653067780106868,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.3051947977680745,
   "close": false
 }

@@ -1,9 +1,12 @@
 ---
 Aliases: [ "#2s-compliment" ]
+date created: 2022/06/22 10:00:30 pm
+date modified: 2022/06/22 10:00:55 pm
 ---
 
 # Integers and Two's Compliment
-#chapter-2 #2s-compliment #data-types 
+
+#chapter-2 #2s-compliment #data-types
 
 - A system for representing negative numbers as well as positive numbers
 - Defined so that traditional addition and subtraction still make mathematical sense
@@ -11,23 +14,23 @@ Aliases: [ "#2s-compliment" ]
 
 ## First of all, some terminology
 
-| Symbol   | Type      | Meaning                         |
+| Symbol | Type | Meaning |
 | -------- | --------- | ------------------------------- |
-| $B2T_w$  | Function  | Binary to two's compliment      |
-| $B2U_w$  | Function  | Binary to unsigned              |
-| $U2B_w$  | Function  | Unsigned to binary              |
-| $U2T_w$  | Function  | Unsigned to two's compliment    |
-| $T2B_w$  | Function  | Two's compliment to binary      |
-| $T2U_w$  | Function  | Two's compliment to unsigned    |
-| $TMin_w$ | Constant  | Minimum two's-compliment value  |
-| $TMax_w$ | Constant  | Maximum two's compliment value  |
-| $UMax_w$ | Constant  | Maximum unsigned value          |
-| $+^t_w$  | Operation | Two's-compliment addition       |
-| $+^u_w$  | Operation | Unsigned addition               |
-| $*^t_w$  | Operation | Two's-compliment multiplication |
-| $*^u_w$  | Operation | Unsigned multiplication         |
-| $-^t_w$  | Operation | Two's-compliment negation       |
-| $-^u_w$  | Operation | Unsigned negation               |
+| $B2T_w$ | Function | Binary to two's compliment |
+| $B2U_w$ | Function | Binary to unsigned |
+| $U2B_w$ | Function | Unsigned to binary |
+| $U2T_w$ | Function | Unsigned to two's compliment |
+| $T2B_w$ | Function | Two's compliment to binary |
+| $T2U_w$ | Function | Two's compliment to unsigned |
+| $TMin_w$ | Constant | Minimum two's-compliment value |
+| $TMax_w$ | Constant | Maximum two's compliment value |
+| $UMax_w$ | Constant | Maximum unsigned value |
+| $+^t_w$ | Operation | Two's-compliment addition |
+| $+^u_w$ | Operation | Unsigned addition |
+| $*^t_w$ | Operation | Two's-compliment multiplication |
+| $*^u_w$ | Operation | Unsigned multiplication |
+| $-^t_w$ | Operation | Two's-compliment negation |
+| $-^u_w$ | Operation | Unsigned negation |
 
 ## Unsigned Integers
 
@@ -48,7 +51,8 @@ Anyways, we can express $UMax_w$ as $UMax_w\doteq\sum^{w-1}_{i=0}2^i=2^w-1$
 $B2U_w$ is also a *bijection*, meaning that a vector can be converted into an unsigned integer and vice versa. The opposite function is called $U2B_w$.
 
 ## Signed Integers
-#2s-compliment 
+
+#2s-compliment
 
 In order to represent signed integers, the most significant bit in two's compliment is negated, which offsets the whole thing. Thus we have:
 
@@ -76,5 +80,3 @@ x+2^w,&x<0\\
 x,&x\ge0
 \end{cases}
 $$
-
-

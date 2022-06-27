@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "bbed9b7541b1da7f",
+        "id": "648b2f535ca66d8e",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Detexify link.md",
+            "file": "Book Notes/Selected Practice Problems/Selected Practice Problems.md",
             "mode": "source",
             "source": true
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#boolean-algebra",
+                "query": "tag:#todo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Detexify link.md",
+                "file": "Book Notes/Selected Practice Problems/Selected Practice Problems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Detexify link.md"
+                "file": "Book Notes/Selected Practice Problems/Selected Practice Problems.md"
               }
             }
           },
@@ -118,24 +118,24 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "bbed9b7541b1da7f",
+  "active": "648b2f535ca66d8e",
   "lastOpenFiles": [
-    "Detexify link.md",
-    "CSAPP Setup.md",
-    "Resources.md",
-    "Key Takeaways of CSAPP Labs.md",
-    "Labs/Datalab/allOddBits.md",
-    "Labs/Datalab/bitXor.md",
+    "Book Notes/Selected Practice Problems/Selected Practice Problems.md",
+    "Labs/Datalab/isLessOrEqual.md",
     "Labs/Datalab/Datalab.md",
+    "Labs/Datalab/conditional.md",
+    "Labs/Datalab/logicalNeg.md",
+    "Labs/Datalab/isAsciiDigit.md",
+    "Labs/Datalab/howManyBits.md",
     "Labs/Datalab/tMin.md",
-    "Labs/Datalab/isTmax.md",
-    "Book Notes/Chapter 2/Integers and Two's Compliment.md"
+    "Labs/Datalab/negate.md",
+    "Labs/Datalab/isTmax.md"
   ]
 }

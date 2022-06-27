@@ -4,6 +4,16 @@
       "type": "file",
       "title": "Integers and Two's Compliment",
       "path": "Book Notes/Chapter 2/Integers and Two's Compliment.md"
+    },
+    {
+      "type": "file",
+      "title": "howManyBits",
+      "path": "Labs/Datalab/howManyBits.md"
+    },
+    {
+      "type": "file",
+      "title": "isLessOrEqual",
+      "path": "Labs/Datalab/isLessOrEqual.md"
     }
   ]
 }

@@ -1,9 +1,12 @@
 ---
 Aliases: [ "#boolean-algebra", "#logic" ]
+date created: 2022/05/21 9:49:45 pm
+date modified: 2022/06/25 7:44:01 pm
 ---
 
 # Boolean Algebra
-#boolean-algebra #logic 
+
+#boolean-algebra #logic
 
 > [!quote]
 > Since binary values are at the core of how computers encode, store, and manipulate information, a rich body of mathematical knowledge has evolved around the study of the values 0 and 1. This started with the work of George Boole (1815-1864) around 1850 and thus is known as *Boolean algebra*.
@@ -42,7 +45,7 @@ In addition to plain 0 and 1 values, boolean operations can also be used multipl
 
 ## Truth Tables
 
-Truth tables are a great way to visualize a boolean operation's inputs and outputs. It's analogous to a binary addition chart, except it's not for addition but instead conjunction[^1], disjunction[^2], negation[^3], and what have you. They look like this (XOR as an example)
+Truth tables are a great way to visualize a boolean operation's inputs and outputs. It's analogous to a binary addition chart, except it's not for addition but instead conjunction,[^1] disjunction,[^2] negation,[^3] and what have you. They look like this (XOR as an example)
 
 $$
 \begin{array}{c|cc}
@@ -56,7 +59,7 @@ $$
 
 In C, boolean operations are like any other operation such as addition, multiplication, whatever. We can also use hexadecimal or binary or whatever other format as a number.
 
-### Logical operatoins
+### Logical operations
 
 In C there are also logical operations which treat numbers as either true or false. True or false are represented as 1 and 0 (literally `0x01` and `0x00`) and non-zero numbers all count as true.
 

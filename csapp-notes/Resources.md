@@ -1,3 +1,7 @@
+---
+date created: 2022/06/22 10:00:30 pm
+date modified: 2022/06/22 10:00:30 pm
+---
 # Resources
 
 [Labs downloads](http://www.csapp.cs.cmu.edu/3e/labs.html)
