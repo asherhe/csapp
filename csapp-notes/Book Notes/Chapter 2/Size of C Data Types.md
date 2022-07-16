@@ -1,7 +1,8 @@
 ---
 date created: 2022/05/02 9:15:16 pm
-date modified: 2022/06/22 7:55:09 pm
+date modified: 2022/06/26 9:05:40 pm
 ---
+
 # Size of Data Types in C
 
 #chapter-2 #data-types
@@ -36,9 +37,9 @@ date modified: 2022/06/22 7:55:09 pm
 | `long` | `unsigned long` | 4 | 8 |
 | `int32_t` | `uint32_t` | 4 | 4 |
 | `int64_t` | `uint64_t` | 8 | 8 |
-| `char *` |                  | 4 | 8 |
-| `float` |                  | 4 | 4 |
-| `double` |                  | 8 | 8 |
+| `char *` | | 4 | 8 |
+| `float` | | 4 | 4 |
+| `double` | | 8 | 8 |
 
 **[[Integers and Two's Compliment|Range of integral data types]] (64-bit)**
 

@@ -1,7 +1,8 @@
 ---
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/22 10:00:30 pm
+date modified: 2022/06/26 9:05:40 pm
 ---
+
 # CSAPP Labs - Key Takeaways
 
 CSAPP labs are a very interesting (and important) part of the CS:APP course. Here are a few key takeaways I've learned

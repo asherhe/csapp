@@ -1,7 +1,8 @@
 ---
 date created: 2022/06/22 7:26:03 pm
-date modified: 2022/06/22 7:32:14 pm
+date modified: 2022/06/26 9:05:40 pm
 ---
+
 # Practice Problem 2.9
 
 #practice-problems #chapter-2 #boolean-algebra

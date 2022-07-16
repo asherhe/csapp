@@ -1,6 +1,6 @@
 ---
 date created: 2022/05/02 7:33:35 pm
-date modified: 2022/06/25 8:36:33 pm
+date modified: 2022/06/29 9:23:04 pm
 ---
 
 # bitXor
@@ -24,4 +24,4 @@ int bitXor(int x, int y)
   return ~(~(~x & y) & ~(x & ~y));
 }
 ```
-**Operations:** 8
+**Operations:** #todo

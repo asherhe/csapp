@@ -4,8 +4,8 @@
       "Remove Hashtags from tags in the YAML frontmatter, as they make the tags there invalid.": true
     },
     "Insert YAML attributes": {
-      "Inserts the given YAML attributes into the YAML frontmatter. Put each attribute on a single line.": false,
-      "Text to insert": "aliases: \ntags: "
+      "Inserts the given YAML attributes into the YAML frontmatter. Put each attribute on a single line.": true,
+      "Text to insert": "tags: "
     },
     "YAML Timestamp": {
       "Keep track of the date the file was last edited in the YAML front matter. Gets dates from file metadata.": true,
@@ -20,12 +20,12 @@
       "Title Key": "title"
     },
     "Escape YAML Special Characters": {
-      "Escapes colons with a space after them (: ), single quotes ('), and double quotes (\") in YAML.": true,
+      "Escapes colons with a space after them (: ), single quotes ('), and double quotes (\") in YAML.": false,
       "Default Escape Character": "\"",
       "Try to Escape Single Line Arrays": false
     },
     "Header Increment": {
-      "Heading levels should only increment by one level at a time": false
+      "Heading levels should only increment by one level at a time": true
     },
     "File Name Heading": {
       "Inserts the file name as a H1 heading if no H1 heading exists.": true
@@ -90,13 +90,13 @@
       "All paragraphs should have exactly one blank line both before and after.": false
     },
     "Space after list markers": {
-      "There should be a single space after list markers and checkboxes.": false
+      "There should be a single space after list markers and checkboxes.": true
     },
     "Remove Empty Lines Between List Markers and Checklists": {
       "There should not be any empty lines between list markers and checklists.": true
     },
     "Compact YAML": {
-      "Removes leading and trailing blank lines in the YAML front matter.": true,
+      "Removes leading and trailing blank lines in the YAML front matter.": false,
       "Inner New Lines": false
     },
     "Consecutive blank lines": {
@@ -118,5 +118,7 @@
   },
   "lintOnSave": true,
   "displayChanged": true,
-  "foldersToIgnore": []
+  "foldersToIgnore": [
+    "Templates/"
+  ]
 }

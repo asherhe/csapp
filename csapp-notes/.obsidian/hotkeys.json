@@ -1,20 +1,11 @@
 {
-  "table-editor-obsidian:next-cell": [],
-  "table-editor-obsidian:next-row": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "Tab"
-    }
-  ],
   "obsidian-footnotes:insert-footnote": [
     {
       "modifiers": [
         "Mod",
         "Shift"
       ],
-      "key": "G"
+      "key": "6"
     }
   ]
 }

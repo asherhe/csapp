@@ -155,7 +155,27 @@ So all we have left to dissect are the `if`s. Each `if` is responsible for updat
 
 Since the `if`s affect both `hi` and `lo` we will have to change both values.
 
-The `if` is like a [[conditional]]
+The `if` is like a [[conditional]], and thus we expand it like a conditional. The `if` block:
+
+```c
+midBit = x >> mid;
+if (midBit)
+{
+  lo = mid + 1;
+}
+else
+{
+  hi = mid;
+}
+```
+
+now turns into:
+
+```c
+midBit = !(x >> mid) - 1;
+lo = (midBit & (mid + 1)) | (~midBit & lo);
+hi = (midBit & hi) | (~midBit & mid);
+```
 
 ---
 
@@ -193,31 +213,31 @@ int howManyBits(int x)
   x = neg ^ x; // Same as (~neg & x) | (neg & ~x)
 
   mid = 15; // Iteration 1
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = midBit & (mid + 1); // If midBit happens to be zero, lo would be set to zero
   hi = (midBit & 31) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 2
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 3
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 4
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 5
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);

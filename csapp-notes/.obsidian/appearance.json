@@ -1,8 +1,4 @@
 {
-  "translucency": false,
-  "textFontFamily": "",
-  "monospaceFontFamily": "JetBrains Mono",
-  "cssTheme": "Primary",
-  "enabledCssSnippets": [],
-  "baseFontSize": 21
+  "cssTheme": "Sanctum",
+  "baseFontSize": 16
 }

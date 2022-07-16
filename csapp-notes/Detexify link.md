@@ -1,7 +1,8 @@
 ---
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/23 5:46:11 pm
+date modified: 2022/06/26 9:05:40 pm
 ---
+
 # [Detexify](https://detexify.kirelabs.org/classify.html)
 
 Also iframe because it's convenient

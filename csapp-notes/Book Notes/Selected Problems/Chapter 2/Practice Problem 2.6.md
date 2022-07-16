@@ -1,7 +1,8 @@
 ---
 date created: 2022/05/02 9:38:40 pm
-date modified: 2022/06/22 8:35:54 pm
+date modified: 2022/06/26 9:05:40 pm
 ---
+
 # Practice Problem 2.6
 
 #practice-problems #chapter-2 #data-types #floating-point

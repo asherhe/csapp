@@ -38,4 +38,4 @@ int logicalNeg(int x)
 }
 ```
 
-**Operations: ** #todo
+**Operations:** #todo

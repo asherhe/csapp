@@ -1,7 +1,8 @@
 ---
-Aliases: [ "#2s-compliment" ]
+tags: 
+Aliases: [ "#2s-compliment", "integers", "two's compliment" ]
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/22 10:00:55 pm
+date modified: 2022/07/06 10:08:50 pm
 ---
 
 # Integers and Two's Compliment
@@ -80,3 +81,19 @@ x+2^w,&x<0\\
 x,&x\ge0
 \end{cases}
 $$
+
+## Overflow
+
+Sometimes when we add or multiply numbers, they go out of range. This causes all kinds of unintuitive behaviour (`x + y` is sometimes negative for positive `x` and `y`!), but an understanding of overflow can avoid most occurences of this.
+
+#todo insert that 3D diagram of overflow
+
+When overflow occurs, extra bits are cut off and discarded, which results in modular behaviour. In other words, unsigned addition is defined to be:
+
+$$
+x\,+_u^w\,y=\begin{cases}x+y,&x+y<2^y\quad\text{Normal}\\x+y-2^w,&2^w\le x+y\le2^{w+1}\quad\text{Overflow}\end{cases}
+$$
+
+Normally, $x\,+_u^w\,y\ge x$, but when there is overflow, the sum becomes $x+y-2^w$. $y<2^w$, so we have $x+y-2^w<x$.
+
+In two's compliment, we also have to account for *underflow*, or when the sum becomes too small to represent and some bits disappear.

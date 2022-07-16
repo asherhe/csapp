@@ -1,11 +1,14 @@
 [
-  "tag-wrangler",
-  "table-editor-obsidian",
+  "obsidian-linter",
+  "quick-latex",
   "obsidian-style-settings",
   "obsidian-outliner",
+  "folder-note-plugin",
+  "templater-obsidian",
+  "zoottelkeeper-obsidian-plugin",
+  "obsidian-frontmatter-tag-suggest",
   "obsidian-footnotes",
-  "better-fn",
-  "obsidian-prominent-starred-files",
-  "obsidian-linter",
-  "waypoint"
+  "table-editor-obsidian",
+  "tag-wrangler",
+  "obsidian-contextual-typography"
 ]
