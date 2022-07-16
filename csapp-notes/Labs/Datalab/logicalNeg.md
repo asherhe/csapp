@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/25 8:20:40 pm
-date modified: 2022/06/25 8:36:19 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # logicalNeg
@@ -38,4 +40,4 @@ int logicalNeg(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 7

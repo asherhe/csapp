@@ -1,6 +1,8 @@
 ---
+tags: logic 
+aliases: 
 date created: 2022/05/02 7:33:35 pm
-date modified: 2022/06/29 9:23:04 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # bitXor
@@ -24,4 +26,4 @@ int bitXor(int x, int y)
   return ~(~(~x & y) & ~(x & ~y));
 }
 ```
-**Operations:** #todo
+**Operations:** 8

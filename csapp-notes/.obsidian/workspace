@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "528354628d9f4860",
+        "id": "b06933df5314df67",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "CSAPP Setup.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -36,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "todo",
+                "query": "tag:#todo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "CSAPP Setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "CSAPP Setup.md"
+              }
             }
           },
           {
@@ -111,24 +118,24 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 300,
     "collapsed": true
   },
-  "active": "528354628d9f4860",
+  "active": "b06933df5314df67",
   "lastOpenFiles": [
-    "Resources.md",
-    "Book Notes/Selected Problems/Chapter 2/Practice Problem 2.49.md",
-    "Book Notes/Selected Problems/Chapter 2/Practice Problem 2.5.md",
-    "Book Notes/Chapter 2/Floating Point.md",
+    "Book Notes/Chapter 2/Bit Shifting.md",
     "Book Notes/Chapter 2/Boolean Algebra.md",
-    "Index of csapp-notes.md",
-    "Detexify link.md",
-    "CSAPP Setup.md",
-    "Labs/Index of Labs.md",
-    "Labs/Datalab/Index of Datalab.md"
+    "Book Notes/Chapter 2/Floating Point.md",
+    "Book Notes/Chapter 2/Integers and Two's Compliment.md",
+    "Book Notes/Chapter 2/Overflow.md",
+    "Book Notes/Chapter 2/Size of C Data Types.md",
+    "Book Notes/Index of Book Notes.md",
+    "Labs/Datalab/allOddBits.md",
+    "Labs/Datalab/bitXor.md",
+    "Labs/Datalab/conditional.md"
   ]
 }

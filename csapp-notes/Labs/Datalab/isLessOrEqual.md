@@ -1,7 +1,8 @@
 ---
 tags: 
+aliases: 
 date created: 2022/06/25 7:46:06 pm
-date modified: 2022/07/06 8:22:17 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # isLessOrEqual
@@ -62,3 +63,5 @@ int isLessOrEqual(int x, int y)
   return (diffSigns & !~xSign) | (~diffSigns & !((y + ~x + 1) >> 31));
 }
 ```
+
+**Operations:** 14

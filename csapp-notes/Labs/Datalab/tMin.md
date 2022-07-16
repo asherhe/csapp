@@ -1,13 +1,15 @@
 ---
+tags: 2s-compliment 
+aliases: 
 date created: 2022/05/02 7:37:04 pm
-date modified: 2022/06/25 8:37:01 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # tMin
 
 #lab #datalab #2s-compliment
 
-The minimum 32-bit [[Integers and Two's Compliment|two's compliment integer]] is equal to `0x80000000`, or simply a `1` in the MSB.
+The minimum 32-bit [[Integers and Two's Compliment#Signed Integers|two's compliment integer]] is equal to `0x80000000`, or simply a `1` in the MSB.
 
 Since we are prohibited from directly entering `0x80000000`, a simple bit shift does the trick.
 
@@ -24,4 +26,4 @@ int tmin(void)
   return 1 << 31;
 }
 ```
-**Operations:** #todo
+**Operations:** 1

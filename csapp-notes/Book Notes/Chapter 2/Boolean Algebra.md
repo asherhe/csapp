@@ -1,7 +1,8 @@
 ---
-Aliases: [ "#boolean-algebra", "#logic" ]
+tags: 
+aliases: ["#boolean-algebra", "#logic"]
 date created: 2022/05/21 9:49:45 pm
-date modified: 2022/06/25 7:44:01 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Boolean Algebra

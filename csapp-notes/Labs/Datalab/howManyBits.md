@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/25 8:56:38 pm
-date modified: 2022/06/25 9:14:10 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # howManyBits
@@ -246,4 +248,4 @@ int howManyBits(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 73 (pretty bad but that's as good as it basically gets)

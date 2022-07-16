@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/22 10:04:58 pm
-date modified: 2022/06/25 8:36:58 pm
+date modified: 2022/07/15 9:22:05 pm
 ---
 
 # negate
@@ -23,4 +25,4 @@ int negate(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 2

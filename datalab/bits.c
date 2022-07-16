@@ -219,10 +219,10 @@ int isAsciiDigit(int x)
   // We can also split the digits 0x30 to 0x39 into a 8-chunk and a 2-chunk.
 
   // We try to fit our numbers 0-7 (0x30-0x37) into the numbers 8-15, then >> 3
-  int zero2Seven = !(((x + ~0x27 /* Writing "- 0x28" without subtraction*/) >> 3) + ~0 /* ~0 is -1 */);
-  
+  int zero2Seven = !(((x + ~0x27 /* Writing "- 0x28" without subtraction*/) >> 3) - 1 /* ~0 is -1 */);
+
   // Now try to fit it into 2 and 3 and >> 1
-  int eightOr9 = !(((x + ~0x35) >> 1) + ~0); // Same logic as zero2Seven
+  int eightOr9 = !(((x + ~0x35) >> 1) - 1); // Same logic as zero2Seven
   return zero2Seven | eightOr9;
 }
 /*
@@ -308,31 +308,31 @@ int howManyBits(int x)
   x = neg ^ x; // Same as (~neg & x) | (neg & ~x)
 
   mid = 15; // Iteration 1
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = midBit & (mid + 1); // If midBit happens to be zero, lo would be set to zero
   hi = (midBit & 31) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 2
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 3
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 4
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
 
   mid = (lo + hi) >> 1; // Iteration 5
-  midBit = !(x >> mid) + ~0;
+  midBit = !(x >> mid) - 1;
 
   lo = (midBit & (mid + 1)) | (~midBit & lo);
   hi = (midBit & hi) | (~midBit & mid);
@@ -390,7 +390,7 @@ unsigned floatScale2(unsigned uf)
  */
 int floatFloat2Int(unsigned uf)
 {
-  // Get the three components of a lfloating-point number
+  // Get the three components of a floating-point number
   unsigned signMask = 0x80000000;
   unsigned expMask = 0x7f800000;
   unsigned fracMask = 0x007fffff;

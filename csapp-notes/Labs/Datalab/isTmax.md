@@ -1,6 +1,8 @@
 ---
+tags: 2s-compliment 
+aliases: 
 date created: 2022/05/02 7:57:22 pm
-date modified: 2022/06/25 8:36:53 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # isTmax
@@ -28,4 +30,4 @@ int isTmax(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 7

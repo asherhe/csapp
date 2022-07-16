@@ -1,17 +1,19 @@
 ---
+tags: floating-point 
+aliases: 
 date created: 2022/06/29 9:22:45 pm
-date modified: 2022/06/29 9:45:30 pm
+date modified: 2022/07/15 9:44:36 pm
 ---
 
 # floatScale2
 
 #lab #datalab #chapter-2 #floating-point
 
-In most cases, scaling a floating-point number by two is a matter of incrementing the `exp` component of the number.
+In most cases, scaling a [[Floating Point|floating point number]] by two is a matter of incrementing the `exp` component of the number.
 
-There are, however, three cases to consider - $\pm0$, special values ($\pm\infty$ and $NaN$), and denormalized values. In the case of the first two, doubling has no effect, so if we have one of these cases we just return.
+There are, however, three cases to consider - $\pm0$, [[Floating Point#^9943a7|denormalized values]], and [[Floating Point#^d05a98|special numbers]]. In the case of $\pm0$, $\pm\infty$, and $NaN$, doubling has no effect, so if we have one of these cases we just return.
 
-For denormalized values. we have to left-shift the `frac` component by one. If the most significant bit of `frac` is `1`, this will overflow, but thanks to the smart people who devised the floating-point standard, we can continue as usual.
+For denormalized values. we have to [[Bit Shifting#^5fd8cc|left shift]] the `frac` component by one. If the most significant bit of `frac` is `1`, this will [[Overflow]], but thanks to the smart people who devised the floating-point standard, we can continue as usual.
 
 ```c
 /*
@@ -52,4 +54,4 @@ unsigned floatScale2(unsigned uf)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 14

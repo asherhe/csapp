@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/05/02 9:15:16 pm
-date modified: 2022/06/26 9:05:40 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Size of Data Types in C

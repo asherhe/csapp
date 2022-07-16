@@ -1,6 +1,8 @@
 ---
+tags: boolean-algebra 
+aliases: 
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/29 9:25:03 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # allOddBits
@@ -37,4 +39,4 @@ int allOddBits(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 7

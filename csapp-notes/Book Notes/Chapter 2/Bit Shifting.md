@@ -1,7 +1,8 @@
 ---
 tags: 2s-compliment 
+aliases: ["shift"]
 date created: 2022/07/06 9:43:10 pm
-date modified: 2022/07/06 9:52:27 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Bit Shifting
@@ -11,7 +12,7 @@ Bit shifting is when the bits of some value are "shifted" over by some amount.
 Shifting can be done in two directions:
 
 - **Left shifting**: `0x0b << 4 = 0xb0`
-  Bits are shifted towards the MSB. The bits that go out of range are discarded and zeros are appended to fill in the gaps
+  Bits are shifted towards the MSB. The bits that go out of range are discarded and zeros are appended to fill in the gaps ^5fd8cc
 - **Right shifting**:
   Bits are shifted towards the LSB. Bits that go out of range are discarded, but the behaviour on the left side of the value becomes a little strange.
 

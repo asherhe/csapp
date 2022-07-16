@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/26 9:05:40 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # [Detexify](https://detexify.kirelabs.org/classify.html)

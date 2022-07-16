@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/06/26 9:05:40 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Setting up the CSAPP environment
@@ -28,7 +30,7 @@ Also Linux may deny access to some executables:
 bash: ./dlc: Permission denied
 ```
 
-To fix this run `chmod u+x [executable name]` which will change the permissions a bit.
+To fix this run `chmod u+x [executable name]` which will change the permissions a bit so that you can run it.
 
 ## Step 3: Initializing Git SSH
 

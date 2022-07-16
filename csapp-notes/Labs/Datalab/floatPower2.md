@@ -1,12 +1,17 @@
 ---
-tags: 
+tags: floating-point 
+aliases: 
 date created: 2022/07/06 7:49:34 pm
-date modified: 2022/07/06 7:52:22 pm
+date modified: 2022/07/15 9:45:58 pm
 ---
 
 # floatPower2
 
 #lab #datalab #chapter-2 #floating-point
+
+> [!important] Note on testing
+> Because the grader supplies so many tests, `floatPower2` might fail on some computers but succeed on other faster ones.
+> Theoretically it should run relatively fast because it's two comparisons, an add, and a shift, but the grader has a *lot* of tests there
 
 With floating-point powers, the `frac` component is `0`, so the only thing we really need to modify is the `exp` component (since all exponents are positive).
 
@@ -38,4 +43,4 @@ unsigned floatPower2(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 5

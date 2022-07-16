@@ -1,8 +1,8 @@
 ---
 tags: 
-Aliases: [ "#floating-point" ]
+aliases: ["#floating-point", "float", "floats", "floating point number", "floating point numbers"]
 date created: 2022/05/21 9:53:05 pm
-date modified: 2022/07/13 9:20:31 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Floating-Point
@@ -54,9 +54,9 @@ Floating-point numbers also have a few different cases for special numbers
 - **Denormalized Values**: Denormalized values (or "denorms") provide (two) zeros and a smooth transition into zero.
   Because powers of two can never become zero, at some point we say "stop, this is zero". We want to do this as far back as possible, so we let this happen at `exp = 0x00`. However, $E$ still remains at what would happen at `exp = 0x01`, namely, $E=-2^{k-1}+2$. Instead of transitioning to an even smaller step size, we gently flow into zero. This means we also remove the implied 1.
   Curiously, there are two values of zero, at $+0.0=\texttt{0x00\,00\,00\,00}$ and $-0.0=\texttt{0x80\,00\,00\,00}$.
-
+ ^9943a7
 - **Special Values**: For representing really large or even nonexistent numbers.
-  When the `exp` field is all 1's (`0xff`), we enter the realm of "special values": $\pm\infty$ and $NaN$, literally "not a number". When the fraction field is all zeros, we have an infinity, usually the result of the floating-point counterpart of overflow. $NaN$ is reserved for those absurd computations like $\frac00$, $0^\infty$, $\sqrt{-1}$, $\infty-\infty$, and so on. They are also really handy as "uninitialized values", filler data values before any real data has been assigned.
+  When the `exp` field is all 1's (`0xff`), we enter the realm of "special values": $\pm\infty$ and $NaN$, literally "not a number". When the fraction field is all zeros, we have an infinity, usually the result of the floating-point counterpart of overflow. $NaN$ is reserved for those absurd computations like $\frac00$, $0^\infty$, $\sqrt{-1}$, $\infty-\infty$, and so on. They are also really handy as "uninitialized values", filler data values before any real data has been assigned. ^d05a98
 
 Notice that increasing integer values correlate to increasing floating-point values. This is intentional design to that floating-point numbers can be compared and sorted as if they were normal integers.[^4]
 

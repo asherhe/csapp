@@ -1,8 +1,9 @@
 ---
 tags: 
-Aliases: [ "#2s-compliment", "integers", "two's compliment" ]
+aliases: 
+aliases: ["#2s-compliment", "integers", "two's compliment", "int", "ints"]
 date created: 2022/06/22 10:00:30 pm
-date modified: 2022/07/06 10:08:50 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # Integers and Two's Compliment

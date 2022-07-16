@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/25 7:37:31 pm
-date modified: 2022/06/29 9:08:32 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # conditional
@@ -34,10 +36,10 @@ int conditional(int x, int y, int z)
   // Same functionality as the multiplexer, so we can use the multiplexer logic
 
   // Converts x to a true/false value for masking
-  int xMask = !x - 1;
+  int xMask = !x + ~0; // subtraction is illegal
 
   return (y & xMask) | (z & ~xMask);
 }
 ```
 
-**Operations:** #todo
+**Operations:** 7

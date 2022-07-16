@@ -1,6 +1,8 @@
 ---
+tags: 
+aliases: 
 date created: 2022/06/22 10:05:55 pm
-date modified: 2022/06/25 8:36:45 pm
+date modified: 2022/07/15 9:49:54 pm
 ---
 
 # isAsciiDigit
@@ -51,4 +53,4 @@ int isAsciiDigit(int x)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 13

@@ -1,7 +1,8 @@
 ---
-tags: 
+tags: floating-point 
+aliases: 
 date created: 2022/06/29 9:45:46 pm
-date modified: 2022/07/06 7:41:50 pm
+date modified: 2022/07/15 9:20:07 pm
 ---
 
 # floatFloat2Int
@@ -54,4 +55,4 @@ int floatFloat2Int(unsigned uf)
 }
 ```
 
-**Operations:** #todo
+**Operations:** 12
