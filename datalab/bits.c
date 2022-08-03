@@ -219,7 +219,7 @@ int isAsciiDigit(int x)
   // We can also split the digits 0x30 to 0x39 into a 8-chunk and a 2-chunk.
 
   // We try to fit our numbers 0-7 (0x30-0x37) into the numbers 8-15, then >> 3
-  int zero2Seven = !(((x + ~0x27 /* Writing "- 0x28" without subtraction*/) >> 3) - 1 /* ~0 is -1 */);
+  int zero2Seven = !(((x + ~0x27 /* Writing "- 0x28" without subtraction*/) >> 3) + ~0 /* ~0 is -1 */);
 
   // Now try to fit it into 2 and 3 and >> 1
   int eightOr9 = !(((x + ~0x35) >> 1) - 1); // Same logic as zero2Seven
@@ -237,7 +237,7 @@ int conditional(int x, int y, int z)
   // Same functionality as the multiplexer, so we can use the multiplexer logic
 
   // Converts x to a true/false value for masking
-  int xMask = !x - 1;
+  int xMask = !x + ~0; // subtraction is illegal
 
   return (y & xMask) | (z & ~xMask);
 }
